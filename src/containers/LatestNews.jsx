@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { loadMoreLatest } from '../store/actions/news';
-import s from '../components/Test.module.css';
+import s from '../components/Main.module.css';
 import NewsList from '../components/Secondary/NewsList';
 import Preloader from '../components/partials/Preloader';
 

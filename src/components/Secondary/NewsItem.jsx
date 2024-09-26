@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from '../Test.module.css';
+import s from '../Main.module.css';
 
 export default function NewsItem(props) {
     const date = new Date(props.date).toLocaleDateString('en-US');

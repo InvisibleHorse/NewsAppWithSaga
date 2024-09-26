@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NewsItem from './NewsItem';
-import s from '../Test.module.css';
+import s from '../Main.module.css';
 import Paginator from './Paginator/Paginator';
 
 export default function NewsList({ news, error, title, paginate, totalPosts, newsPerPage }) {

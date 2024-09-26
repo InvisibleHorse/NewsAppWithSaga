@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import s from '../components/Test.module.css';
+import { useParams } from 'react-router';
+import s from '../components/Main.module.css';
 import NewsList from '../components/Secondary/NewsList';
 import { loadMorePopular } from '../store/actions/news';
 import Preloader from '../components/partials/Preloader';
@@ -11,8 +12,9 @@ export default function PopularNews() {
     const { popularNewsError } = useSelector(store => store?.errors || {});
     const { isDataLoading } = useSelector(store => store?.loader || {});
     const dispatch = useDispatch();
+    const { number } = useParams();
 
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(number);
     const [newsPerPage] = useState(10);
 
     useEffect(() => {

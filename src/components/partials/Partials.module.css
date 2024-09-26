@@ -14,7 +14,7 @@
             rgba(81,103,99,0.9220938375350141) 60%,
             rgba(81,103,99,1) 100%);
 }
-.house{
+.iconColor{
     color: white;
 }
 .nav {
@@ -32,6 +32,7 @@
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    grid-area: menu;
 }
 
 .nav a:hover,
@@ -41,7 +42,17 @@
 }
 .header{
     background-color: #be998e;
+    display: grid;
+    grid-template-areas:
+    "menu login";
+    grid-template-columns: 8fr 2fr;
+    grid-gap:10px;
 }
 .spinner {
     margin: 1rem 0;
+}
+.login {
+    grid-area: login;
+    text-align: right;
+    padding: 10px 20px;
 }

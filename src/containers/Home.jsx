@@ -1,5 +1,5 @@
 import React from 'react';
-import s from '../components/Test.module.css';
+import s from '../components/Main.module.css';
 import newspaper from '../assets/newspaper.png';
 
 export default function Home() {
