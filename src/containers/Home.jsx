@@ -1,15 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import s from '../components/Test.module.css';
 import NewsItem from '../components/Secondary/NewsItem';
+import { loadMoreLatest } from '../store/actions/news';
 
-// Get the name of the day
 const getDayName = dayIndex => {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return days[dayIndex] || 'Today';
 };
 
-// Get ordinal suffix for the date
 const getDateSuffix = day => {
     if (day > 3 && day < 21) return 'th';
     switch (day % 10) {
@@ -29,6 +28,11 @@ export default function Home() {
         'July', 'August', 'September', 'October', 'November', 'December',
     ];
     const monthName = monthNames[date.getMonth()];
+    const dispatch = useDispatch();
+
+    React.useEffect(() => {
+        dispatch(loadMoreLatest({ limit: 10, page: 1 }));
+    }, [dispatch]);
 
     const latestNews = useSelector(store => store?.news?.latestNews || []);
 
