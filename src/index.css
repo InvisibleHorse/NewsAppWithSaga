@@ -16,3 +16,41 @@ html{
   height:100%;
 }
 
+.card{
+    border: 0;
+    text-align: left;
+}
+.cBody{
+    background-color: #be998e;
+    border: 0;
+    padding: 1rem 0 1rem 2rem;
+    width: 100%;
+    color: white;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.newsComponent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 25px;
+    padding: 30px 0;
+}
+
+.centeringContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  padding-left: 100px;
+  padding-right: 100px;
+}

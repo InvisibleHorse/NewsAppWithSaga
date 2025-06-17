@@ -1,5 +1,9 @@
 .main {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .info{
@@ -25,19 +29,7 @@
     background-color: #e1b7aa;
     border:0
 }
-.card{
-    width:80%;
-    margin: 1% 0 1% 10%;
-    border: 0;
-    background-color: transparent;
-    text-align: left;
-}
-.cBody{
-    background-color: #be998e;
-    border: 0;
-    padding: 1rem 0 1rem 2rem;
-    color: white;
-}
+
 .buttonDefault {
     font-weight: bold;
     width: 10%;
@@ -51,13 +43,15 @@
 }
 
 .title{
-    font-weight: bold;
-    color: white;
     font-size: 2rem;
     text-align: left;
-    padding: 1% 0 1% 10%;
-
 }
+
+h1, h2, h3 {
+    font-weight: bold;
+    color: white; 
+}
+
 .textOutline{
     text-shadow:
     -1px -1px 0 rgba(215, 214, 214, 0.43),
@@ -78,9 +72,7 @@ font-family: 'Charm', cursive;
 .list{
     padding-bottom: 3rem;
 }
-.image {
-    transform: rotate(-20deg);
-}
+
 /*media*/
 @media (max-width:480px){
     .buttonDefault{

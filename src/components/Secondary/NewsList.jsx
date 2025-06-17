@@ -9,20 +9,24 @@ export default function NewsList({ news, error, title, paginate, totalPosts, new
         return error ? <h2 className={`${s.title} ${s.textOutline}`}>&#9888; {error} &#9888;</h2> : null;
     }
     return (
-        <div className={s.list}>
+        <div className="newsComponent">
             <h1 className={`${s.title} ${s.textOutline}`}>{`${title}:`}</h1>
-            {news.map(story => (
-                <NewsItem
-                    key={story.created_at_i}
-                    title={story.title}
-                    date={story.created_at}
-                    url={story.url}
-                    author={story.author}
-                    points={story.points}
-                    comments={story.num_comments}
-                />
-            ))}
-            <Paginator paginate={paginate} totalPosts={totalPosts} newsPerPage={newsPerPage} />
+            <div className="cardContainer">
+                {news.map(story => (
+                    <NewsItem
+                        key={story.created_at_i}
+                        title={story.title}
+                        date={story.created_at}
+                        url={story.url}
+                        author={story.author}
+                        points={story.points}
+                        comments={story.num_comments}
+                    />
+                ))}
+            </div>
+            <div className="centeringContainer">
+                <Paginator paginate={paginate} totalPosts={totalPosts} newsPerPage={newsPerPage} />
+            </div>
         </div>
     );
 }

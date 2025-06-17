@@ -1,43 +1,63 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import s from '../components/Test.module.css';
-import newspaper from '../assets/newspaper.png';
+import NewsItem from '../components/Secondary/NewsItem';
+
+// Get the name of the day
+const getDayName = dayIndex => {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[dayIndex] || 'Today';
+};
+
+// Get ordinal suffix for the date
+const getDateSuffix = day => {
+    if (day > 3 && day < 21) return 'th';
+    switch (day % 10) {
+        case 1: return 'st';
+        case 2: return 'nd';
+        case 3: return 'rd';
+        default: return 'th';
+    }
+};
 
 export default function Home() {
-    let day;
-    switch (new Date().getDay()) {
-        case 0:
-            day = 'Sunday';
-            break;
-        case 1:
-            day = 'Monday';
-            break;
-        case 2:
-            day = 'Tuesday';
-            break;
-        case 3:
-            day = 'Wednesday';
-            break;
-        case 4:
-            day = 'Thursday';
-            break;
-        case 5:
-            day = 'Friday';
-            break;
-        case 6:
-            day = 'Saturday';
-            break;
-        default:
-            day = 'Today';
-    }
-    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+    const date = new Date();
+    const dayName = getDayName(date.getDay());
+    const dayOfMonth = date.getDate();
+    const monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December',
     ];
-    const date = new Date();
+    const monthName = monthNames[date.getMonth()];
+
+    const latestNews = useSelector(store => store?.news?.latestNews || []);
+
+    const featuredNews = [...latestNews]
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3);
+
     return (
-        <div className={s.main}>
-            {/* eslint-disable-next-line max-len */}
-            <h1 className={`${s.title} ${s.textOutline}`}>{day}, {date.getDate()}th of {monthNames[date.getMonth()]}</h1>
-            <img className={s.image} src={newspaper} alt="newspaper" />
+        <div className={`${s.main} content`}>
+            <h1 className={`${s.title} ${s.textOutline}`}>
+                {dayName}, {dayOfMonth}{getDateSuffix(dayOfMonth)} of {monthName}
+            </h1>
+
+            <div className="newsComponent">
+                <h2>Featured News</h2>
+                <div className="cardContainer">
+                    {featuredNews.map(story => (
+                        <NewsItem
+                            key={story.created_at_i}
+                            title={story.title}
+                            date={story.created_at}
+                            url={story.url}
+                            author={story.author}
+                            points={story.points}
+                            comments={story.num_comments}
+                        />
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }

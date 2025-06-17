@@ -21,9 +21,9 @@ export default function PopularNews() {
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
-        <div className={s.main}>
+        <div className={`${s.main} content`}>
             {isDataLoading ?
-                <Preloader /> : (
+                <div className="centeringConateiner" height="500px"><Preloader /></div> : (
                     <NewsList
                         news={popularNews}
                         error={popularNewsError}

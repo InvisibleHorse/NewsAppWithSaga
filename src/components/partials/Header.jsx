@@ -10,7 +10,7 @@ const navigation = [
 
 export default function Header() {
     return (
-        <header className={s.header}>
+        <header className={`${s.header} content`}>
             <nav className={s.nav}>
                 <div>
                     {navigation.map(({ id, title, path }) => (
