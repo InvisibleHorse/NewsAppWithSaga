@@ -1,5 +1,5 @@
 {
-  "homepage":"https://InvisibleHorse.github.io/NewsAppWithSaga",
+  "homepage": "https://InvisibleHorse.github.io/NewsAppWithSaga",
   "name": "saga",
   "version": "0.1.0",
   "private": true,
@@ -51,12 +51,14 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.27.5",
     "eslint": "8.52.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "prettier": "3.1.0",
     "prettier-eslint": "16.1.2"
   }
