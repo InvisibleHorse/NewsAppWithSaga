@@ -3,9 +3,9 @@ import React from 'react';
 import s from './Partials.module.css';
 
 const navigation = [
-    { id: 1, title: <i className={`${s.house} fa-solid fa-house`} />, path: '/' },
-    { id: 2, title: 'Latest News', path: '/latest-news/1' },
-    { id: 3, title: 'Popular News', path: '/popular-news/1' },
+    { id: 1, title: <i className={`${s.house} fa-solid fa-house`} />, path: '/NewsAppWithSaga/' },
+    { id: 2, title: 'Latest News', path: '/NewsAppWithSaga/latest-news/1' },
+    { id: 3, title: 'Popular News', path: '/NewsAppWithSaga/popular-news/1' },
 ];
 
 export default function Header() {
