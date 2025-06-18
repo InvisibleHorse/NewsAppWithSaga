@@ -36,9 +36,11 @@ export default function Home() {
 
     const latestNews = useSelector(store => store?.news?.latestNews || []);
 
-    const featuredNews = [...latestNews]
-        .sort(() => 0.5 - Math.random())
-        .slice(0, 3);
+    const featuredNews = React.useMemo(() =>
+        [...latestNews]
+            .sort(() => 0.5 - Math.random()).slice(0, 3),
+        [latestNews]
+    );
 
     return (
         <div className={`${s.main} content`}>
