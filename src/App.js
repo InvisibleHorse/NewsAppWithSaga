@@ -11,9 +11,9 @@ function App() {
         <div>
             <Header />
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/latest-news/:number" element={<LatestNews />} />
-                <Route path="/popular-news/:number" element={<PopularNews />} />
+                <Route path="/NewsAppWithSaga/" element={<Home />} />
+                <Route path="/NewsAppWithSaga/latest-news/:number" element={<LatestNews />} />
+                <Route path="/NewsAppWithSaga/popular-news/:number" element={<PopularNews />} />
             </Routes>
             <Footer />
         </div>
